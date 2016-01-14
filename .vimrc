@@ -22,10 +22,10 @@ endif
 
 filetype off
 
-set rtp+=~/.vim/bundle/vundle
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
-Bundle 'gmarik/vundle'
+Bundle 'VundleVim/Vundle.vim'
 
 "My bundles:
 
@@ -38,6 +38,9 @@ Bundle 'tpope/vim-sleuth'
 Bundle 'scrooloose/nerdtree'
 Bundle 'tomtom/tlib_vim'
 Bundle 'MarcWeber/vim-addon-mw-utils'
+
+
+call vundle#end()
 
 " If using a dark background within the editing area and syntax highlighting
 " turn on this option as well
