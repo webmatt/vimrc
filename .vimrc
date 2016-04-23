@@ -25,19 +25,19 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
-Bundle 'VundleVim/Vundle.vim'
+Plugin 'VundleVim/Vundle.vim'
 
 "My bundles:
 
-Bundle 'tpope/vim-fugitive'
-Bundle 'othree/html5.vim'
-Bundle 'garbas/vim-snipmate'
-Bundle 'honza/vim-snippets'
-Bundle 'tpope/vim-rails'
-Bundle 'tpope/vim-sleuth'
-Bundle 'scrooloose/nerdtree'
-Bundle 'tomtom/tlib_vim'
-Bundle 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tpope/vim-fugitive'
+Plugin 'othree/html5.vim'
+Plugin 'garbas/vim-snipmate'
+Plugin 'honza/vim-snippets'
+Plugin 'tpope/vim-rails'
+Plugin 'tpope/vim-sleuth'
+Plugin 'scrooloose/nerdtree'
+Plugin 'tomtom/tlib_vim'
+Plugin 'MarcWeber/vim-addon-mw-utils'
 
 
 call vundle#end()
