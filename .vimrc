@@ -17,30 +17,26 @@ runtime! debian.vim
 " Vim5 and later versions support syntax highlighting. Uncommenting the
 " following enables syntax highlighting by default.
 if has("syntax")
-  syntax on
+    syntax on
 endif
 
-filetype off
+" Automatic install of vim-plug
 
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+if empty(glob('~/.vim/autoload/plug.vim'))
+    silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+                \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
 
-Plugin 'VundleVim/Vundle.vim'
+call plug#begin('~/.vim/plugged')
 
-"My bundles:
+"My plugins:
 
-Plugin 'tpope/vim-fugitive'
-Plugin 'othree/html5.vim'
-Plugin 'garbas/vim-snipmate'
-Plugin 'honza/vim-snippets'
-Plugin 'tpope/vim-rails'
-Plugin 'tpope/vim-sleuth'
-Plugin 'scrooloose/nerdtree'
-Plugin 'tomtom/tlib_vim'
-Plugin 'MarcWeber/vim-addon-mw-utils'
+Plug 'tpope/vim-fugitive'
+Plug 'scrooloose/nerdtree'
 
 
-call vundle#end()
+call plug#end()
 
 " If using a dark background within the editing area and syntax highlighting
 " turn on this option as well
@@ -71,7 +67,7 @@ call vundle#end()
 
 " Source a global configuration file if available
 if filereadable("/etc/vim/vimrc.local")
-  source /etc/vim/vimrc.local
+    source /etc/vim/vimrc.local
 endif
 
 " lhs comments
@@ -230,9 +226,3 @@ let g:C_MapLeader = ','
 autocmd FileType * setlocal formatoptions-=o
 
 colorscheme desert
-
-" eclim settings
-" Add eclims-LocateFile as mapping
-nnoremap <silent> <leader>o :LocateFile<cr>
-let g:EclimBuffersDefaultAction = 'edit'
-let g:EclimLocateFileDefaultAction = 'edit'
