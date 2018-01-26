@@ -34,7 +34,8 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'tpope/vim-fugitive'
 Plug 'scrooloose/nerdtree'
-
+Plug 'lervag/vimtex'
+Plug 'w0rp/ale'
 
 call plug#end()
 
@@ -194,6 +195,7 @@ let java_allow_cpp_keywords = 1
 
 " System default for mappings is now the "," character
 let mapleader = ","
+let maplocalleader = ","
 
 " Make shift-insert work like in Xterm
 map <S-Insert> <MiddleMouse>
@@ -226,3 +228,5 @@ let g:C_MapLeader = ','
 autocmd FileType * setlocal formatoptions-=o
 
 colorscheme desert
+
+let g:vimtex_quickfix_open_on_warning = 0
